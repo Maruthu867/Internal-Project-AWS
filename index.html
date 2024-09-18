@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS EC2 Instance Creation Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>AWS EC2 Instance Creation Form</h2>
+    <form action="/submit_form" method="post">
+        <h3>1. Client Information</h3>
+        <label for="clientName">Client Name</label>
+        <input type="text" id="clientName" name="clientName" required>
+
+        <label for="companyName">Company Name</label>
+        <input type="text" id="companyName" name="companyName" required>
+
+        <label for="projectName">Project Name</label>
+        <input type="text" id="projectName" name="projectName" required>
+
+        <label for="contactPerson">Contact Person</label>
+        <input type="text" id="contactPerson" name="contactPerson" required>
+
+        <label for="contactEmail">Contact Email</label>
+        <input type="email" id="contactEmail" name="contactEmail" required>
+
+        <label for="contactPhoneNumber">Contact Phone Number</label>
+        <input type="tel" id="contactPhoneNumber" name="contactPhoneNumber" required>
+
+        <label for="requestDate">Date of Request</label>
+        <input type="date" id="requestDate" name="requestDate" required>
+
+        <h3>3. Storage Configuration</h3>
+
+        <label for="Root Volume Type">Root Volume Type(EBS/Instanse Store)</label>
+        <input type="text" id="Root Volume Type" name="Root Volume Type" required>
+
+        <label for="Root Volume Size (GB)">Root Volume Size</label>
+        <input type="text" id="" name="region" required>
+
+        <label for="availabilityZone">Availability Zone</label>
+        <input type="text" id="availabilityZone" name="availabilityZone" required>
+
+        <label for="instanceType">Instance Type</label>
+        <input type="text" id="instanceType" name="instanceType" required>
+
+        <label for="numInstances">Number of Instances</label>
+        <input type="number" id="numInstances" name="numInstances" required>
+
+        <label for="architecture">Architecture</label>
+        <select id="architecture" name="architecture">
+            <option value="64-bit x86">64-bit x86</option>
+            <option value="64-bit ARM">64-bit ARM</option>
+        </select>
+
+        <label for="purchaseOption">Purchase Option</label>
+        <select id="purchaseOption" name="purchaseOption">
+            <option value="On-Demand">On-Demand</option>
+            <option value="Reserved">Reserved</option>
+            <option value="Spot">Spot</option>
+        </select>
+
+        <label for="lifecycle">Instance Lifecycle</label>
+        <select id="lifecycle" name="lifecycle">
+            <option value="Normal">Normal</option>
+            <option value="Spot">Spot</option>
+        </select>
+
+        <label for="tenancy">Tenancy</label>
+        <select id="tenancy" name="tenancy">
+            <option value="Shared">Shared</option>
+            <option value="Dedicated Instance">Dedicated Instance</option>
+            <option value="Dedicated Host">Dedicated Host</option>
+        </select>
+
+        <label for="eniRequired">Elastic Network Interface (ENI) Required</label>
+        <select id="eniRequired" name="eniRequired">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+
+        <label for="hostResourceGroupName">Host Resource Group Name</label>
+        <input type="text" id="hostResourceGroupName" name="hostResourceGroupName">
+
+        <h3>1. Client Information</h3>
+        <label for="clientName">Client Name</label>
+        <input type="text" id="clientName" name="clientName" required>
+
+        <label for="companyName">Company Name</label>
+        <input type="text" id="companyName" name="companyName" required>
+
+        <label for="projectName">Project Name</label>
+        <input type="text" id="projectName" name="projectName" required>
+
+        <label for="contactPerson">Contact Person</label>
+        <input type="text" id="contactPerson" name="contactPerson" required>
+
+        <label for="contactEmail">Contact Email</label>
+        <input type="email" id="contactEmail" name="contactEmail" required>
+
+        <label for="contactPhoneNumber">Contact Phone Number</label>
+        <input type="tel" id="contactPhoneNumber" name="contactPhoneNumber" required>
+
+        <label for="requestDate">Date of Request</label>
+        <input type="date" id="requestDate" name="requestDate" required>
+
+        
+
+        <h3>13. Additional Configuration</h3>
+        <label for="userData">User Data (Startup/Initialization Script)</label>
+        <textarea id="userData" name="userData"></textarea>
+
+        <label for="terminationProtection">Instance Termination Protection</label>
+        <select id="terminationProtection" name="terminationProtection">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+
+        <label for="shutdownBehavior">Shutdown Behavior</label>
+        <select id="shutdownBehavior" name="shutdownBehavior">
+            <option value="Stop">Stop</option>
+            <option value="Terminate">Terminate</option>
+        </select>
+
+        <label for="cloudFormationRequired">CloudFormation Template Required</label>
+        <select id="cloudFormationRequired" name="cloudFormationRequired">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+
+        <label for="automationTools">Automation Tools</label>
+        <input type="text" id="automationTools" name="automationTools">
+
+        <label for="customConfig">Any Other Custom Configurations</label>
+        <textarea id="customConfig" name="customConfig"></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
